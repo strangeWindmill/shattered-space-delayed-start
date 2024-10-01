@@ -1,0 +1,26 @@
+Back again with another "Bethesda, I love you but we just don't agree on quest starts" mod.  
+
+In the Shattered Space DLC, the call-to-action quest "What Remains" will as soon as the player travels to a space location where they won't be scanned for contraband after they have completed "One Small Step".  This means the player can begin the questline at roughly any time if they want... But it'll probably kick your ass.  Starfield itself includes a recommendation that the player be level 35 right in the quest listing.
+
+Now, if you are level 35 or wish to enter Valhalla early, you can just go on in and be fine.  But if you're the cautious sort, you will now have that quest in your quest log until you work up to that level.  
+
+It'll just be there.
+
+Taunting you.
+
+OR you can install this mod, and the quest will not trigger until you are at that recommended level of 35.
+
+[size=5]Details[/size]
+No loose files, medium master
+
+
+[list]
+[*]Created two new globals:
+[list][*][b]sw_ssd_UseMinimumLevelCheckForShatteredSpace[/b] - Flag indicating if a level check should be used when attempting to start the "What Remains" Quest.  Default: [b]1 (true)[/b]
+[/list][list][*][b]sw_ssd_MinimumLevelRequiredForShatteredSpace[/b] - Level player must reach before "What Remains" Quest will start if above flag is true. Default: [b]35[/b]
+[/list][*]Created a new condition form,  [b]sw_ssd_ShatteredSpaceMinimumLevelCheckForm [/b]using the above globals: returns [b]1 (true)[/b] if player level is equal or greater to [b]sw_ssd_MinimumLevelRequiredForShatteredSpace[/b] OR [b]sw_ssd_UseMinimumLevelCheckForShatteredSpace[/b] is [b]0 (false)[/b].
+[*]Updated Change Location Event Quest Node "SFBGS001_MQ1_QuestNode" to include a check that [b]sw_ssd_ShatteredSpaceMinimumLevelCheckForm[/b] is true at the bottom of its options. 
+
+[/list]
+End result is that the player must be above the specified level when changing location in order for the quest to start, or the flag can be set to false and the quest will start as in vanilla.
+
