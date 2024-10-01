@@ -1,6 +1,6 @@
 Back again with another "Bethesda, I love you but we just don't agree on quest starts" mod.  
 
-In the Shattered Space DLC, the call-to-action quest "What Remains" will as soon as the player travels to a space location where they won't be scanned for contraband after they have completed "One Small Step".  This means the player can begin the questline at roughly any time if they want... But it'll probably kick your ass.  Starfield itself includes a recommendation that the player be level 35 right in the quest listing.
+In the Shattered Space DLC, the call-to-action quest "What Remains" will start as soon as the player travels to a space location where they won't be scanned for contraband after they have completed "One Small Step".  This means the player can begin the questline at roughly any time if they want... But it'll probably kick your ass unless you're at a mid-game level.  Starfield itself includes a recommendation that the player be level 35 right in the quest listing.
 
 Now, if you are level 35 or wish to enter Valhalla early, you can just go on in and be fine.  But if you're the cautious sort, you will now have that quest in your quest log until you work up to that level.  
 
@@ -8,10 +8,10 @@ It'll just be there.
 
 Taunting you.
 
-OR you can install this mod, and the quest will not trigger until you are at that recommended level of 35.
+OR you can install this mod, and the quest will not trigger until you are at that recommended level of 35 (or whatever you set the global to).
 
 [size=5]Details[/size]
-No loose files, medium master
+No loose files, small master
 
 
 [list]
@@ -20,7 +20,16 @@ No loose files, medium master
 [/list][list][*][b]sw_ssd_MinimumLevelRequiredForShatteredSpace[/b] - Level player must reach before "What Remains" Quest will start if above flag is true. Default: [b]35[/b]
 [/list][*]Created a new condition form,  [b]sw_ssd_ShatteredSpaceMinimumLevelCheckForm [/b]using the above globals: returns [b]1 (true)[/b] if player level is equal or greater to [b]sw_ssd_MinimumLevelRequiredForShatteredSpace[/b] OR [b]sw_ssd_UseMinimumLevelCheckForShatteredSpace[/b] is [b]0 (false)[/b].
 [*]Updated Change Location Event Quest Node "SFBGS001_MQ1_QuestNode" to include a check that [b]sw_ssd_ShatteredSpaceMinimumLevelCheckForm[/b] is true at the bottom of its options. 
-
 [/list]
 End result is that the player must be above the specified level when changing location in order for the quest to start, or the flag can be set to false and the quest will start as in vanilla.
 
+[size=5]Configuration[/size]
+the above mentioned globals can be edited via typical means, and can be used to change the level requirement or outright disable this mod entirely.  You could even set the level to something impossible and keep the Shattered Space quest from ever starting.
+
+[size=5]Compatibility[/size]
+The only existing form touched in this mod is SFBGS001_MQ1_QuestNode to add the new condition.  If any other mods change that condition list, a patch will be required, but otherwise all toes should remain unstepped on.
+
+[size=5]Source[/size]
+[list]
+[*] [url=https://github.com/strangeWindmill/shattered-space-delayed-start/tree/main]Github[/url]
+[/list]
